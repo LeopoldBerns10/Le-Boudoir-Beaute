@@ -204,7 +204,7 @@
   document.querySelectorAll('.nav-links a, .mobile-nav a, .dropdown-menu a').forEach(a => {
     const href = a.getAttribute('href') || '';
     if (path.endsWith(href) && href !== '') a.classList.add('active');
-    if ((path === '/' || path.endsWith('index.html')) && (href === 'index.html' || href === '../index.html')) {
+    if ((path === '/' || path.endsWith('accueil.html')) && (href === 'accueil.html' || href === '../accueil.html')) {
       a.classList.add('active');
     }
   });
