@@ -778,22 +778,18 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
 }
 .tarifs-group-title:first-child { margin-top: 0; }
 
-/* ---- Galerie ---- */
+/* ---- Galerie ----
+   Grille uniforme : toutes les vignettes ont la même taille (même hauteur de ligne,
+   recadrage object-fit:cover). L'ancien effet "masonry" (1 photo géante + le reste
+   en petit, via nth-child(3n+1)) donnait un rendu déséquilibré/brouillon dès que le
+   nombre de photos n'était pas un multiple net de 3, ou que les photos avaient des
+   cadrages très différents (portrait/paysage/gros plan) — retiré au profit de cette
+   grille régulière, plus propre et prévisible sur toutes les pages. */
 .galerie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  grid-auto-rows: 220px;
-  grid-auto-flow: dense;
+  grid-auto-rows: 240px;
   gap: 1rem;
-}
-.galerie-item:nth-child(3n+1) { grid-column: span 2; grid-row: span 2; }
-
-/* Variante uniforme : désactive l'effet masonry pour les galeries à peu d'images
-   où une vignette géante déséquilibre la mise en page (ex. Bronzage, 3 photos). */
-.galerie-grid--uniform .galerie-item,
-.galerie-grid--uniform .galerie-item:nth-child(3n+1) {
-  grid-column: span 1;
-  grid-row: span 1;
 }
 .galerie-item {
   position: relative;
@@ -823,9 +819,6 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
 }
 .galerie-item:hover .galerie-img { transform: scale(1.12); filter: brightness(1); }
 
-@media (max-width: 480px) {
-  .galerie-item:nth-child(3n+1) { grid-column: span 1; grid-row: span 1; }
-}
 .galerie-item:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 /* ---- Lightbox ---- */
