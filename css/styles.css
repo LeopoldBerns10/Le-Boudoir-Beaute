@@ -284,8 +284,24 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
   inset: 0;
   background-image: url('../Image-basse/Charte/IMG_1755.jpg');
   background-size: cover;
-  background-position: center 25%;
-  opacity: 0.2;
+  background-position: center 72%;
+  opacity: 0.24;
+  pointer-events: none;
+}
+.hero-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 380px;
+  height: 380px;
+  max-width: 62vw;
+  max-height: 62vw;
+  transform: translate(-50%, -50%);
+  background-image: url('../assets/logo-icon.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.14;
   pointer-events: none;
 }
 .hero-content {
@@ -480,11 +496,19 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
 }
 
 /* ---- Marques partenaires ---- */
+.partenaires-intro {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 3rem;
+  color: rgba(247,244,236,.75);
+  font-size: .95rem;
+  line-height: 1.75;
+}
 .marques-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .marque-card {
@@ -496,6 +520,35 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
   border: 1px solid rgba(201,166,107,.3);
   border-radius: 14px;
   padding: 2.5rem 2rem;
+}
+.marque-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: rgba(247,244,236,.85);
+  margin: -0.5rem 0 0;
+  max-width: 280px;
+}
+.marque-stats {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  width: 100%;
+  border-top: 1px solid rgba(201,166,107,.25);
+  padding-top: 1.25rem;
+}
+.marque-stats li {
+  font-size: .8rem;
+  letter-spacing: .02em;
+  color: var(--gold);
+  font-weight: 500;
+}
+.marque-stats li span {
+  color: rgba(247,244,236,.55);
+  font-weight: 400;
 }
 .marque-photo {
   width: 100%;
@@ -524,9 +577,10 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
   font-size: .85rem;
   line-height: 1.75;
   color: rgba(247,244,236,.8);
-  margin: 0;
-  max-width: 280px;
+  margin: 0 0 1rem;
+  max-width: 380px;
 }
+.marque-desc:last-of-type { margin-bottom: 0; }
 
 /* ---- Bons cadeaux ---- */
 .bons-inner { max-width: 680px; margin: 0 auto; text-align: center; }
@@ -966,7 +1020,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
 /* ---- Responsive ---- */
 @media (max-width: 960px) {
   .contact-grid  { grid-template-columns: 1fr; }
-  .marques-grid  { grid-template-columns: 1fr; max-width: 320px; }
+  .marques-grid  { grid-template-columns: 1fr; max-width: 420px; }
   .bio-grid      { grid-template-columns: 1fr; max-width: 380px; text-align: center; }
   .bio-text      { text-align: center; }
   .footer-top    { grid-template-columns: 1fr 1fr; }
