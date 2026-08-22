@@ -459,13 +459,21 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
   padding: 0;
   margin: 1.5rem 0 0;
 }
-.bio-tags li {
+.bio-tags a {
+  display: inline-block;
   font-size: .78rem;
   letter-spacing: .03em;
   color: var(--navy);
   border: 1px solid rgba(31,59,87,.25);
   padding: .4rem .95rem;
   border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.bio-tags a:hover {
+  background: var(--navy);
+  color: var(--cream);
+  border-color: var(--navy);
 }
 
 /* ---- Règlement ---- */
